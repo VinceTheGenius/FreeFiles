@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+  
+	<meta charset="UTF-8"> 
+	<link rel="icon" href="favicon.png"> 
+	<meta name="description" content="FreeFiles est un site sur lequel vous pourrez trouvez des fichiers mals sécurisés, comme des films ou des e-books, qui deviennent gratuits."> 
+	<title>FreeFiles</title>
+	<meta name="language" content="fr">
+	<link rel="icon" href="favicon.png"> 
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+
+	<body style="background-color:#000000;"></body>
+
+	<img src="crown1.gif" width=120><br>
+
+	<h1>Free Files</h1>
+	<h2>Marquez les termes de votre requête :</h2>
+
+	<form>
+	
+		<label for="mot">Mot(s) à trouver (séparé(s) par des espaces) :</label><textarea id="mot" placeholder="Ex: Harry Potter" name="mot"></textarea><br /><br />
+		<label for="date">Date maximum de publication : </label> 
+			<select id="date" name="date">
+				<option>Tout</option>
+				<option>Un jour</option>
+				<option>Une semaine</option>
+				<option>Un mois</option>
+				<option>Une année</option>
+			</select><br />
+		<label for="site">Recherche a faire uniquement sur ce site : </label><input type="text" id="site" placeholder="Ex: site.com" name="site"><br />
+		<br>
+		<input type="button" style="width:100px; height: 30px"; name="button" value="Rechercher" onclick="go();">
+	</form>
+	<br>
+	<br>
+	<p>En guise d'exemple, si vous rentrez les mots "Star Wars", vous avez de grande chance (même sûr) que vous tombiez sur les films du même nom dans un Index.</p>
+	<p>Idem pour des e-books, images...</p>
+	<p>Pour ce faire, le programme vas rechercher sur google les dossiers mal sécurisés qui contiennent des fichiers dont le nom contient vos mots clés.</p>
+	<br>
+	<br>
+	<br>
+	<br>
+	<a href="README.txt" target="_blank">Aide</a>
+	<a href="contact.html" target="_blank">Contact</a>
+	<h6>This file was made by Duboujnou.</h6>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+<script> 
+function go(){
+	var mots=document.getElementById("mot").value;
+	var date=document.getElementById("date").value;
+	var site=document.getElementById("site").value;
+
+	date=["all","d","w","m","y"][["Tout","Un jour","Une semaine","Un mois","Un ans"].indexOf(date)];
+	date="&as_qdr="+date;
+
+	site=(site!="")?("&as_dt=i&as_sitesearch="+site):("");
+	
+	var search="https://www.google.fr/search?hl=fr"+date+site+'&q=intitle:"index of" '+mots;
+	var link=document.createElement("a");
+	link.href=search;
+	link.target="_blank";
+	link.click();
+}
+</script>
+</body>
+
+</html>

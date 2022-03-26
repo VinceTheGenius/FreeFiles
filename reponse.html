@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Transit</title>
+        <link rel="icon" href="favicon.png"> 
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <br><a href="menu.html">Aller au menu</a>
+
+    </body>
+
+    <script type="application/javascript">
+
+function getQuerystring(key, default_) {
+  	if (default_==null) default_="";
+  	key = key.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  	var regex = new RegExp("[\\?&]"+key+"=([^&#]*)");
+  	var qs = regex.exec(window.location.href);
+  	if(qs == null) return default_; else return qs[1];
+}
+    
+var username=getQuerystring("username");
+var password=getQuerystring("password");
+
+var liste=[
+["Guest","freefiles"],
+["Vince","a"],
+["Techno","flash"],
+];
+
+var security=true;
+
+for (var i=0;i<liste.length;i++){
+    if(username==liste[i][0] && password==liste[i][1]){
+        security=false;
+    }
+}
+if(security==true){
+    window.history.back();
+}
+    
+    </script>
+
+</html>

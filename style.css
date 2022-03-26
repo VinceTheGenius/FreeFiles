@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'BailJamjuree';
+    src: url('./BaiJamjuree-Regular.ttf');
+}
+@font-face {
+    font-family: 'BungeeShade';
+    src: url('./BungeeShade-Regular.ttf');
+}
+@font-face {
+    font-family: 'BlackOpsO';
+    src: url('./BlackOpsOne-Regular.ttf');
+}
+a{
+    font-family: 'BailJamjuree';
+    color: white;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 1s;
+    font-size: 16px;
+}
+a.bouton{
+    border: transparent;
+    background-color: transparent;
+}
+h1{
+    text-align: center;
+    color: #ffffff;
+    font-family: 'BungeeShade';
+}
+h2,h3,h5,h6,p,form,option{
+    text-align: center;
+    color: #ffffff;
+    font-family: 'BailJamjuree';
+}
+body {
+    text-align: center;
+    color:rgb(0, 195, 202);
+    background-image:url(fond1.jpg);
+    background-position:center center;
+    margin:0.5cm;
+}
+
+textarea, select, input{
+    text-align: center;
+    background-color: #2d1e70;
+    color: #ffffff;
+}
